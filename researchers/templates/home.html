@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% block header_styles %}
+  <style>
+    header.masthead {
+      background-image: url({% static 'img/home-bg.jpg' %});
+    }
+  </style>
+{% endblock %}
+{% block content %}
+<div style="
+	    font-size: 0px;
+	    ">
+<div class="post-preview">
+  <p class="post-meta">
+  Welcome! This list is an evolving (non-exhaustive) compendium of female industry and academic researchers. We aim to raise the profile of women leading research and leading their own laboratories in micro/nanofluidics and Bio-MEMS (i.e., more senior than postdoctoral scholars). To nominate yourself or multiple colleagues, please visit our ‘Nominate’ page and share the Women in Microfluidics & BioMEMS list with others, especially conference and workshop organizers and program committees (<a href="http://microfluidics.berkeley.edu">microfluidics.berkeley.edu</a>). Thank you! </p>
+  <br>
+</div>
+
+<div>
+  {% for r in researcher %}
+    <div class="researcher">
+	{% if r.website_link != "N/A" and r.website_link != "" %}
+	<p><a class="researcherwebname" href="{{ r.website_link }}">{{ r.fullname|title}}</a> | {{ r.institution }} | {{r.position}} | <i>{{ r.des|capfirst }}</i></p>
+	{% else %}
+	<p> {{ r.fullname|title}} | {{ r.institution }} | {{r.position}} | <i>{{ r.des|capfirst }}</i></p>
+	{% endif %}	
+ 
+    </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block header_styles %}
+  <style>
+    header.masthead {
+      background-image: url({% static 'img/about-bg.jpg' %});
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+<h1>About</h1>
+<p>We created the Women in Microfluidics & BioMEMS listing to assist conference chairs and organizers with identifying speakers, panelists, and moderators for inclusion in conferences and workshops having micro/nanofluidics and Bio-MEMS content. We encourage anyone who is in a position of suggesting or selecting speakers to use this list as a tool to help identify great researchers leading their own laboratories in micro/nanofluidics and Bio-MEMS (i.e., more senior than postdoctoral scholars).  Please submit nominations, as the Women in Microfluidics & BioMEMS list is designed to be only as comprehensive as we – our community – make it.  If you have questions or ideas, please contact Prof. Amy E. Herr at UC Berkeley.</p>
+{% endblock %}
